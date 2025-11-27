@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+PRODID:-//zoom.us//iCalendar Event//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+CLASS:PUBLIC
+BEGIN:VTIMEZONE
+TZID:Africa/Nairobi
+LAST-MODIFIED:20250410T142247Z
+TZURL:https://www.tzurl.org/zoneinfo-outlook/Africa/Nairobi
+X-LIC-LOCATION:Africa/Nairobi
+BEGIN:STANDARD
+TZNAME:EAT
+TZOFFSETFROM:+0300
+TZOFFSETTO:+0300
+DTSTART:19700101T000000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20250929T133759Z
+DTSTART;TZID=Africa/Nairobi:20250929T160000
+DTEND;TZID=Africa/Nairobi:20250929T190000
+SUMMARY:INTE 315: E-Commerce
+UID:EVENT_r2GiN_xTiGADOLfnz1ykg@zoom.us
+DESCRIPTION:evans kimutai is inviting you to a scheduled Zoom meeting.\nJ
+ oin Zoom Meeting\nhttps://kabarak-ac-ke.zoom.us/j/85097775455?pwd=yypwR7
+ klcA26T2yVy57euaecY1Ef04.1\n\nMeeting ID: 850 9777 5455\nPasscode: 79525
+ 2\n\nJoin instructions\nhttps://kabarak-ac-ke.zoom.us/meetings/850977754
+ 55/invitations?signature=Ca-9NIpAJ2yEj7Uv-bk6D7R95jYR6AhHXyMsppAM9sE\n
+TZID:Africa/Nairobi
+LOCATION:https://kabarak-ac-ke.zoom.us/j/85097775455?pwd=yypwR7klcA26T2yV
+ y57euaecY1Ef04.1
+RRULE:FREQ=WEEKLY;COUNT=10;INTERVAL=1;BYDAY=MO
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR

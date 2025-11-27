@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title">All Logs (Admin)</h5>
+    <table class="table table-sm table-striped">
+      <thead>
+        <tr><th>Time</th><th>User</th><th>Action</th><th>File</th><th>Download</th></tr>
+      </thead>
+      <tbody>
+        {% for log in logs %}
+          <tr>
+            <td>{{ log[5] }}</td>
+            <td>{{ log[3] }}</td>
+            <td>{{ log[1] }}</td>
+            <td>{{ log[2] }}</td>
+            <td>
+              {% if log[4] %}
+                <a class="btn btn-sm btn-success" href="{{ url_for('download', filename=log[4]) }}">Download</a>
+              {% else %}
+                <span class="text-muted">N/A</span>
+              {% endif %}
+            </td>
+          </tr>
+        {% else %}
+          <tr><td colspan="5" class="text-center">No logs yet</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

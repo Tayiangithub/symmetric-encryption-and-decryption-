@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-md-6">
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h5 class="card-title"><b>Encrypt / Decrypt File</b></h5>
+        <form action="{{ url_for('process') }}" method="POST" enctype="multipart/form-data">
+          <div class="mb-3">
+            <input class="form-control" type="file" name="file" required><br><br>
+          </div>
+          <div class="mb-3">
+            <input class="form-control" type="password" name="password" placeholder="Password (used to derive key)" required><br><br>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-primary" type="submit" name="action" value="encrypt"><b>Encrypt</b></button><br><br>
+            <button class="btn btn-warning" type="submit" name="action" value="decrypt"><b>Decrypt</b></button><br><br><br>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h5 class="card-title">Quick Info</h5>
+        <p class="small text-muted">Files processed are stored in the server's <code>processed/</code> folder and logged. Use <strong>My Logs</strong> to re-download processed files.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title">User Management</h5>
+    <table class="table table-sm table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Second Name</th>
+          <th>Username</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for u in users %}
+          <tr>
+            <td>{{ u[0] }}</td>
+            <td>{{ u[3] }}</td>
+            <td>{{ u[4] }}</td>
+            <td>{{ u[1] }}</td>
+            <td>{{ u[2] }}</td>
+            <td>
+              {% if u[1] != 'admin' %}
+                {% if u[2] == 'user' %}
+                  <a class="btn btn-sm btn-success" href="{{ url_for('promote_user', user_id=u[0]) }}">Promote</a>
+                {% else %}
+                  <a class="btn btn-sm btn-warning" href="{{ url_for('demote_user', user_id=u[0]) }}">Demote</a>
+                {% endif %}
+                <a class="btn btn-sm btn-danger" href="{{ url_for('remove_user', user_id=u[0]) }}">Delete</a>
+              {% else %}
+              <span class="text-dark">Super Admin</span>
+              {% endif %}
+            </td>
+          </tr>
+        {% else %}
+          <tr><td colspan="6" class="text-center">No users found</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
